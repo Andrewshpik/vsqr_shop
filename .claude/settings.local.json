@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"GET / -> %{http_code} \\(%{size_download} bytes\\)\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"GET /catalog -> %{http_code}\\\\n\" http://localhost:3000/catalog)",
+      "Bash(curl -s -o /dev/null -w \"GET /product/geometric-vase-low-poly -> %{http_code}\\\\n\" http://localhost:3000/product/geometric-vase-low-poly)",
+      "Bash(curl -s -o /dev/null -w \"GET /cart -> %{http_code}\\\\n\" http://localhost:3000/cart)",
+      "Bash(curl -s -o /dev/null -w \"GET /checkout -> %{http_code}\\\\n\" http://localhost:3000/checkout)",
+      "Bash(curl -s -o /dev/null -w \"GET / -> %{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"GET /product/svitok-odinarniy -> %{http_code}\\\\n\" http://localhost:3000/product/svitok-odinarniy)",
+      "Bash(curl -s -o /dev/null -w \"GET /product/svitok-dvoynoy -> %{http_code}\\\\n\" http://localhost:3000/product/svitok-dvoynoy)",
+      "Bash(curl -s -o /dev/null -w \"GET /about -> %{http_code}\\\\n\" http://localhost:3000/about)",
+      "Bash(curl -s -o /dev/null -w \"GET / -> %{http_code}\\\\n\" http://localhost:3001/)",
+      "Bash(curl -s -o /dev/null -w \"GET /catalog -> %{http_code}\\\\n\" http://localhost:3001/catalog)",
+      "Bash(curl -s -o /dev/null -w \"GET /product/svitok-odinarniy -> %{http_code}\\\\n\" http://localhost:3001/product/svitok-odinarniy)",
+      "Bash(curl -s -o /dev/null -w \"GET /cart -> %{http_code}\\\\n\" http://localhost:3001/cart)",
+      "Bash(curl -s -o /dev/null -w \"GET /checkout -> %{http_code}\\\\n\" http://localhost:3001/checkout)",
+      "PowerShell(Start-Process \"http://localhost:3001\")",
+      "Bash(curl -sI -L --max-time 10 https://vsqr.ru)",
+      "Bash(nslookup vsqr.ru)",
+      "Bash(git init *)",
+      "Bash(git add *)"
+    ]
+  }
+}
