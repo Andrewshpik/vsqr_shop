@@ -2,6 +2,7 @@ import Link from "next/link";
 import { products, formatPrice } from "@/lib/products";
 import { ProductCard } from "@/components/ProductCard";
 import { ProductTile } from "@/components/ProductTile";
+import { WorkGallery } from "@/components/WorkGallery";
 
 export default function HomePage() {
   const featured = products.slice(0, 4);
@@ -50,9 +51,6 @@ export default function HomePage() {
                   <path d="M5 12h14" />
                   <path d="m12 5 7 7-7 7" />
                 </svg>
-              </Link>
-              <Link href="/checkout" className="btn-outline">
-                Печать по моему файлу
               </Link>
             </div>
 
@@ -169,6 +167,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* GALLERY */}
+      <WorkGallery />
+
       {/* HOW IT WORKS */}
       <section className="mt-24 rounded-[2.5rem] bg-paper-light p-8 ring-1 ring-ink/5 md:p-14">
         <div className="grid gap-8 md:grid-cols-12">
@@ -241,14 +242,14 @@ export default function HomePage() {
             {
               t: "PETG",
               d: "Кухня, улица, влажные помещения. Прочнее и гибче PLA, не размокает.",
-              from: "#7a2f1f",
-              to: "#d35a23",
+              from: "#0c7064",
+              to: "#3ec2ab",
             },
             {
               t: "TPU",
               d: "Эластичный материал. Чехлы, прокладки, держатели, гибкие шарниры.",
-              from: "#3f4e38",
-              to: "#637b58",
+              from: "#3f6e68",
+              to: "#6aa8a0",
             },
           ].map((m) => (
             <div
@@ -268,46 +269,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="my-24 overflow-hidden rounded-[2.5rem] bg-clay-600 p-8 text-paper-light md:p-16">
-        <div className="grid items-center gap-8 md:grid-cols-12">
-          <div className="md:col-span-8">
-            <div className="eyebrow text-paper-light/70">
-              Индивидуальный заказ
-            </div>
-            <h3 className="display mt-3 text-4xl md:text-6xl">
-              Нет в каталоге?
-              <br />
-              <span className="italic">Напечатаем по вашему файлу.</span>
-            </h3>
-            <p className="mt-4 max-w-xl text-paper-light/80">
-              STL, STEP, OBJ, 3MF. Нет файла — пришлите фото или эскиз.
-              Помогаем смоделировать.
-            </p>
-          </div>
-          <div className="md:col-span-4 md:text-right">
-            <Link
-              href="/checkout"
-              className="inline-flex items-center gap-2 rounded-full bg-paper-light px-6 py-4 text-base font-medium text-ink hover:bg-paper"
-            >
-              Оставить заявку
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

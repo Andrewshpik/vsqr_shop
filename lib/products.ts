@@ -8,9 +8,7 @@ export const products: Product[] = [
     category: "decor",
     price: 250,
     material: "PETG",
-    sizeMm: "180 × 60 × 60",
     colors: ["Слоновая кость", "Бронза", "Графит", "Белый"],
-    printTimeHours: 5,
     description:
       "Декоративный свиток с одной осью. Печатается цельно — стержень и полотно как одна деталь. Подходит для интерьерных композиций, фотозон, настольных табличек с гравировкой.",
     highlights: [
@@ -30,9 +28,7 @@ export const products: Product[] = [
     category: "decor",
     price: 350,
     material: "PETG",
-    sizeMm: "220 × 80 × 70",
     colors: ["Слоновая кость", "Бронза", "Графит", "Белый"],
-    printTimeHours: 8,
     description:
       "Свиток с двумя осями — развёрнутый, с обеими ручками. Эффектная подача: подойдёт для подарочной упаковки, тематических подарков и оформления полок.",
     highlights: [
@@ -52,9 +48,7 @@ export const products: Product[] = [
     category: "toys",
     price: 500,
     material: "PETG",
-    sizeMm: "70 × 50 × 55",
     colors: ["Песочный", "Белый", "Серый", "Рыжий"],
-    printTimeHours: 3,
     description:
       "Маленький хомяк, который удобно ложится в ладонь. Печатается без поддержек, поверхность приятная на ощупь. Хорошо стоит на столе и не катится.",
     highlights: [
@@ -73,9 +67,7 @@ export const products: Product[] = [
     category: "decor",
     price: 100,
     material: "PETG",
-    sizeMm: "80 × 80 × 140",
     colors: ["Белый", "Чёрный", "Графит", "Терракота"],
-    printTimeHours: 4,
     description:
       "Простая интерьерная ваза. Подходит для сухоцветов и небольших букетов. Стенки печатаются спиралью — без заметных швов.",
     highlights: [
@@ -85,6 +77,44 @@ export const products: Product[] = [
     ],
     emoji: "🏺",
     gradient: ["#15181f", "#4453cf"],
+    inStock: true,
+  },
+  {
+    id: "p-005",
+    slug: "yashcheritsa",
+    name: "Ящерица",
+    category: "toys",
+    price: 550,
+    material: "PETG",
+    colors: ["Изумруд", "Песочный", "Графит", "Рыжий"],
+    description:
+      "Гибкая шарнирная ящерица — печатается сразу собранной, без поддержек. Сегменты подвижны, хвост и лапки сгибаются. Хорошо ложится в ладонь, держит позу.",
+    highlights: [
+      "21 подвижный сегмент",
+      "Печать без поддержек",
+      "Безопасный PETG",
+    ],
+    emoji: "🦎",
+    gradient: ["#0f3d2e", "#637b58"],
+    inStock: true,
+  },
+  {
+    id: "p-006",
+    slug: "begemot",
+    name: "Бегемот",
+    category: "toys",
+    price: 400,
+    material: "PETG",
+    colors: ["Серый", "Песочный", "Чёрный", "Белый"],
+    description:
+      "Толстенький бегемот, который удобно ложится в ладонь. Печатается без поддержек, поверхность гладкая. Хорошо стоит на столе.",
+    highlights: [
+      "Печать без поддержек",
+      "Устойчивое плоское основание",
+      "Безопасный PETG",
+    ],
+    emoji: "🦛",
+    gradient: ["#3a342e", "#7a7167"],
     inStock: true,
   },
 ];

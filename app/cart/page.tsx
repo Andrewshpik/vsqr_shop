@@ -139,15 +139,17 @@ export default function CartPage() {
               </dd>
             </div>
           </dl>
-          <Link
-            href="/checkout"
-            className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-paper-light py-3.5 text-sm font-medium text-ink hover:bg-paper"
-          >
-            Оформить заказ →
-          </Link>
-          <p className="mt-3 text-xs text-paper-light/60">
-            Оплата после согласования: перевод на карту или СБП.
-          </p>
+          <div className="mt-6 rounded-2xl bg-white/5 px-4 py-4 text-sm text-paper-light/80 ring-1 ring-white/10">
+            Приём заявок временно приостановлен. Напишите состав заказа нам в
+            Telegram —{" "}
+            <a
+              href="https://t.me/vsqr_shop"
+              className="underline decoration-paper-light/40 hover:decoration-paper-light"
+            >
+              @vsqr_shop
+            </a>
+            , согласуем детали и оплату.
+          </div>
         </aside>
       </div>
     </div>

@@ -14,9 +14,7 @@ export type Product = {
   price: number;
   oldPrice?: number;
   material: string;
-  sizeMm: string;
   colors: string[];
-  printTimeHours: number;
   description: string;
   highlights: string[];
   emoji: string;

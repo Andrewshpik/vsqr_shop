@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-4xl px-4">
@@ -77,14 +75,14 @@ export default function AboutPage() {
           <span className="italic text-clay-400">Опишите задачу.</span>
         </h3>
         <p className="mt-4 max-w-md text-paper-light/70">
-          Предложим материал, размер и срок. Без обязательств.
+          Напишите нам в Telegram — предложим материал, размер и срок.
         </p>
-        <Link
-          href="/checkout"
+        <a
+          href="https://t.me/vsqr_shop"
           className="mt-6 inline-flex rounded-full bg-paper-light px-6 py-3 text-sm font-medium text-ink hover:bg-paper"
         >
-          Оставить заявку →
-        </Link>
+          Telegram @vsqr_shop →
+        </a>
       </section>
     </div>
   );

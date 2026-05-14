@@ -3,12 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCart } from "./CartProvider";
+import { ThemeToggle } from "./ThemeToggle";
 
 const nav = [
   { href: "/", label: "Главная" },
   { href: "/catalog", label: "Каталог" },
   { href: "/about", label: "Мастерская" },
-  { href: "/checkout", label: "Заказать" },
 ];
 
 export function Header() {
@@ -66,6 +66,8 @@ export function Header() {
             })}
           </nav>
 
+          <div className="flex items-center gap-2">
+          <ThemeToggle />
           <Link
             href="/cart"
             className="group relative inline-flex items-center gap-2 rounded-full bg-paper-light px-4 py-2.5 text-sm font-medium text-ink ring-1 ring-ink/10 transition hover:ring-ink/30"
@@ -91,6 +93,7 @@ export function Header() {
               </span>
             )}
           </Link>
+          </div>
         </div>
       </header>
     </>

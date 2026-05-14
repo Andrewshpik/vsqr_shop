@@ -16,17 +16,11 @@ export function Footer() {
               эскизу, отправляем по России.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link
-                href="/checkout"
+              <a
+                href="https://t.me/vsqr_shop"
                 className="rounded-full bg-paper-light px-6 py-3 text-sm font-medium text-ink hover:bg-paper"
               >
-                Оставить заявку →
-              </Link>
-              <a
-                href="mailto:hello@vsqr.shop"
-                className="rounded-full bg-white/10 px-6 py-3 text-sm font-medium ring-1 ring-white/15 hover:bg-white/15"
-              >
-                hello@vsqr.shop
+                Telegram @vsqr_shop
               </a>
             </div>
           </div>
@@ -46,14 +40,6 @@ export function Footer() {
                   </li>
                   <li>
                     <Link
-                      href="/checkout"
-                      className="link-underline text-paper-light/85 hover:text-paper-light"
-                    >
-                      Печать по файлу
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
                       href="/about"
                       className="link-underline text-paper-light/85 hover:text-paper-light"
                     >
@@ -66,7 +52,6 @@ export function Footer() {
               <div>
                 <div className="eyebrow text-paper-light/50">Контакты</div>
                 <ul className="mt-4 space-y-2.5 text-sm text-paper-light/85">
-                  <li>hello@vsqr.shop</li>
                   <li>+7 (000) 000-00-00</li>
                   <li>Telegram @vsqr_shop</li>
                 </ul>
@@ -77,7 +62,7 @@ export function Footer() {
                 <ul className="mt-4 space-y-2.5 text-sm text-paper-light/85">
                   <li>Самовывоз — м. Тульская</li>
                   <li>СДЭК · Boxberry</li>
-                  <li>Почта России</li>
+                  <li>Ozon Доставка</li>
                 </ul>
               </div>
             </div>

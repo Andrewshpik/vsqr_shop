@@ -1,36 +1,36 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
         paper: {
-          DEFAULT: "#f4efe6",
-          dark: "#e8e1d2",
-          light: "#faf6ee",
+          DEFAULT: "rgb(var(--paper) / <alpha-value>)",
+          light: "rgb(var(--paper-light) / <alpha-value>)",
+          dark: "rgb(var(--paper-dark) / <alpha-value>)",
         },
         ink: {
-          DEFAULT: "#161210",
-          soft: "#3a342e",
-          muted: "#7a7167",
-          line: "rgba(22, 18, 16, 0.08)",
+          DEFAULT: "rgb(var(--ink) / <alpha-value>)",
+          soft: "rgb(var(--ink-soft) / <alpha-value>)",
+          muted: "rgb(var(--ink-muted) / <alpha-value>)",
         },
         clay: {
-          50: "#fdf5ee",
-          100: "#fbe8d6",
-          200: "#f6cca8",
-          300: "#efa874",
-          400: "#e57f43",
-          500: "#d35a23",
-          600: "#b8451f",
-          700: "#963820",
-          800: "#7a2f1f",
-          900: "#5b251a",
+          50: "#ecfbf8",
+          100: "#d1f5ee",
+          200: "#a3ebdd",
+          300: "#6cdac6",
+          400: "#3ec2ab",
+          500: "#1ea693",
+          600: "#0e8b7a",
+          700: "#0c7064",
+          800: "#0c5851",
+          900: "#0a443f",
         },
         sage: {
-          500: "#637b58",
-          700: "#3f4e38",
+          500: "#6aa8a0",
+          700: "#3f6e68",
         },
       },
       fontFamily: {
@@ -41,8 +41,8 @@ const config: Config = {
         tightest: "-0.04em",
       },
       boxShadow: {
-        soft: "0 20px 50px -25px rgba(22, 18, 16, 0.25)",
-        glow: "0 0 0 1px rgba(22, 18, 16, 0.06), 0 30px 60px -30px rgba(22, 18, 16, 0.3)",
+        soft: "0 20px 50px -25px rgb(var(--ink) / 0.25)",
+        glow: "0 0 0 1px rgb(var(--ink) / 0.06), 0 30px 60px -30px rgb(var(--ink) / 0.3)",
       },
       keyframes: {
         marquee: {

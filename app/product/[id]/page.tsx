@@ -105,8 +105,6 @@ export default function ProductPage({ params }: { params: { id: string } }) {
           <dl className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-ink/10">
             {[
               ["Материал", product.material],
-              ["Размер, мм", product.sizeMm],
-              ["Время печати", `~${product.printTimeHours} ч`],
               ["Доставка", "2–4 дня по РФ"],
             ].map(([k, v]) => (
               <div key={k} className="bg-paper-light p-4">
