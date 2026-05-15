@@ -37,7 +37,7 @@ export function WorkGallery() {
     >
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <div className="eyebrow text-clay-700">Галерея</div>
+          <div className="eyebrow text-clay-600 dark:text-clay-300">Галерея</div>
           <h2 className="display mt-3 text-4xl md:text-6xl">
             Работы из мастерской
           </h2>
