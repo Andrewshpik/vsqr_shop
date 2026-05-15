@@ -547,31 +547,48 @@
         initParticles(150);
         animateBackground();
 
-        // ========== НОВЫЕ ТОВАРЫ ==========
-        const products = [
-            { name: "Свисток одинарный", desc: "Компактный, громкий свисток. 3D-печать.", price: "250 ₽", emoji: "🔊" },
-            { name: "Свисток двойной", desc: "Два тона в одном свистке. Очень громко!", price: "350 ₽", emoji: "📢" },
-            { name: "Хомяк", desc: "Миниатюрная фигурка хомяка. Милота!", price: "150 ₽", emoji: "🐹" },
-            { name: "Ящерица", desc: "Детализированная фигурка ящерицы. Длина 10 см.", price: "500 ₽", emoji: "🦎" },
-            { name: "Бегемот", desc: "Маленький толстый бегемотик. Весёлый подарок.", price: "100 ₽", emoji: "🦛" }
-        ];
+        // ========== ТОВАРЫ ИЗ products.json ==========
+        const productsContainer = document.getElementById('products-container');
 
-        const container = document.getElementById('products-container');
-        if (container) {
-            products.forEach(p => {
-                const card = document.createElement('div');
-                card.className = 'product-card';
-                card.innerHTML = `
-                    <div class="product-image">${p.emoji}</div>
-                    <div class="product-info">
-                        <div class="product-title">${p.name}</div>
-                        <div class="product-desc">${p.desc}</div>
-                        <div class="product-price">${p.price}</div>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
+        function escapeHtml(str) {
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
         }
+
+        function renderProducts(items) {
+            productsContainer.innerHTML = items.map(function (p) {
+                const price = p.price.toLocaleString('ru-RU') + ' ₽';
+                const bg = Array.isArray(p.gradient) && p.gradient.length === 2
+                    ? 'background: linear-gradient(135deg, ' + p.gradient[0] + ', ' + p.gradient[1] + ');'
+                    : '';
+                return '<div class="product-card">' +
+                    '<div class="product-image" style="' + bg + '">' + escapeHtml(p.emoji || '') + '</div>' +
+                    '<div class="product-info">' +
+                    '<div class="product-title">' + escapeHtml(p.name) + '</div>' +
+                    '<div class="product-desc">' + escapeHtml(p.description || '') + '</div>' +
+                    '<div class="product-price">' + price + '</div>' +
+                    '</div></div>';
+            }).join('');
+        }
+
+        fetch('products.json', { cache: 'no-cache' })
+            .then(function (r) {
+                if (!r.ok) throw new Error('HTTP ' + r.status);
+                return r.json();
+            })
+            .then(renderProducts)
+            .catch(function (err) {
+                productsContainer.innerHTML =
+                    '<div style="grid-column: 1 / -1; padding: 24px; text-align: center; ' +
+                    'color: #f5f5f7; background: rgba(0,0,0,0.35); border-radius: 16px;">' +
+                    'Не удалось загрузить товары (' + escapeHtml(err.message) + '). ' +
+                    'Если открываете файл двойным кликом — нужен локальный сервер ' +
+                    '(<code>python -m http.server</code>).</div>';
+            });
 
         // ========== ГАЛЕРЕЯ-СЛАЙДЕР ==========
         (function () {

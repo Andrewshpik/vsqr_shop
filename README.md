@@ -12,12 +12,18 @@
 
 ## Как править
 
-Открыть `index.html` в браузере (двойным кликом) — изменения видны
-сразу после перезагрузки. Никакого билда нет.
+Локальное превью — через локальный HTTP-сервер (просто открыть файл
+двойным кликом не получится, т.к. `index.html` грузит `products.json`
+через `fetch`, а `file://` это блокирует):
+
+```powershell
+python -m http.server 8000
+# открыть http://localhost:8000
+```
 
 Контент:
-- Товары — пока захардкожены в `<script>` внутри `index.html`
-  (план — переехать на загрузку из `products.json`)
+- Товары — `products.json` (поля: `name`, `description`, `price`,
+  `emoji`, `gradient`)
 - Контакты — Telegram-кнопки в футере (`@andrewshpik`, `@fedornabilkin`)
 
 ## Деплой
