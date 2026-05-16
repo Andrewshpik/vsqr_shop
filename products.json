@@ -14,6 +14,7 @@
       "Можно красить акрилом и патинировать"
     ],
     "emoji": "📜",
+    "image": "svict1.jpg",
     "gradient": ["#1f3a36", "#3ec2ab"],
     "inStock": true,
     "isBestseller": true
@@ -33,6 +34,7 @@
       "Устойчиво стоит без подставки"
     ],
     "emoji": "📜",
+    "image": "svist2.jpg",
     "gradient": ["#0c4a44", "#1ea693"],
     "inStock": true,
     "isNew": true
@@ -52,6 +54,7 @@
       "Безопасный PETG"
     ],
     "emoji": "🐹",
+    "image": "hamster.jpg",
     "gradient": ["#0e7b6e", "#a3ebdd"],
     "inStock": true
   },
@@ -88,6 +91,7 @@
       "Безопасный PETG"
     ],
     "emoji": "🦎",
+    "image": "lizards.jpg",
     "gradient": ["#0c5851", "#5d9a8f"],
     "inStock": true
   },

@@ -159,6 +159,14 @@
             align-items: center;
             justify-content: center;
             font-size: 4rem;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .product-info {
@@ -584,8 +592,11 @@
                 const bg = Array.isArray(p.gradient) && p.gradient.length === 2
                     ? 'background: linear-gradient(135deg, ' + p.gradient[0] + ', ' + p.gradient[1] + ');'
                     : '';
+                const media = p.image
+                    ? '<img src="' + escapeHtml(p.image) + '" alt="' + escapeHtml(p.name) + '" loading="lazy">'
+                    : escapeHtml(p.emoji || '');
                 return '<div class="product-card">' +
-                    '<div class="product-image" style="' + bg + '">' + escapeHtml(p.emoji || '') + '</div>' +
+                    '<div class="product-image" style="' + bg + '">' + media + '</div>' +
                     '<div class="product-info">' +
                     '<div class="product-title">' + escapeHtml(p.name) + '</div>' +
                     '<div class="product-desc">' + escapeHtml(p.description || '') + '</div>' +
