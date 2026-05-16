@@ -586,9 +586,10 @@
                 .replace(/'/g, '&#39;');
         }
 
-        function renderProducts(items) {
+        function renderProducts(items, coefficient) {
+            const k = typeof coefficient === 'number' && coefficient > 0 ? coefficient : 1;
             productsContainer.innerHTML = items.map(function (p) {
-                const price = p.price.toLocaleString('ru-RU') + ' ₽';
+                const price = Math.round(p.price * k).toLocaleString('ru-RU') + ' ₽';
                 const bg = Array.isArray(p.gradient) && p.gradient.length === 2
                     ? 'background: linear-gradient(135deg, ' + p.gradient[0] + ', ' + p.gradient[1] + ');'
                     : '';
@@ -610,7 +611,11 @@
                 if (!r.ok) throw new Error('HTTP ' + r.status);
                 return r.json();
             })
-            .then(renderProducts)
+            .then(function (data) {
+                const items = Array.isArray(data) ? data : (data && data.products) || [];
+                const coefficient = (data && typeof data.coefficient === 'number') ? data.coefficient : 1;
+                renderProducts(items, coefficient);
+            })
             .catch(function (err) {
                 productsContainer.innerHTML =
                     '<div style="grid-column: 1 / -1; padding: 24px; text-align: center; ' +
